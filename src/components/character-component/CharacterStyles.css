@@ -1,0 +1,6 @@
+@import "tailwindcss";
+img{
+    display: block;
+    width: 300px;
+    height: auto;
+}
