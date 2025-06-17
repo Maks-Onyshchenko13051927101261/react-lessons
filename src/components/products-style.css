@@ -1,0 +1,12 @@
+.container{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 1rem;
+}
+img {
+    display: block;
+}
+.item{
+    border: 1px solid black;
+    padding: 1rem;
+}
