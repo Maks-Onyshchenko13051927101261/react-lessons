@@ -1,15 +1,15 @@
 import "../products-style.css"
 import {useEffect, useState} from "react";
-import type {ProductModelI} from "../../model/ProductModel.ts";
+import type {IProductModel} from "../../model/ProductModel.ts";
 import {loadProducts} from "../../service/api.service.ts";
 import {Product} from "../product-component/Product.tsx";
 
 export const Products = () => {
-    const [products, SetProducts] = useState<ProductModelI[]>([]);
+    const [products, setProducts] = useState<IProductModel[]>([]);
     useEffect(() => {
         async function fetchProducts() {
             const allProducts = await loadProducts();
-            SetProducts(allProducts);
+            setProducts(allProducts);
         }
 
         fetchProducts();

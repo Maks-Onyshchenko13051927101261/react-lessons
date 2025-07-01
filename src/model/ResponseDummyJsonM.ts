@@ -1,7 +1,7 @@
-import type {ProductModelI} from "./ProductModel.ts";
+import type {IProductModel} from "./ProductModel.ts";
 
-export interface ResponseDummyJsonMI {
-    products:ProductModelI[];
+export interface IResponseDummyJsonM {
+    products:IProductModel[];
     total: number;
     skip: number;
     limit: number;

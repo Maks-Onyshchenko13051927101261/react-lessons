@@ -1,9 +1,9 @@
 import "../products-style.css"
-import type {ProductModelI} from "../../model/ProductModel.ts";
+import type {IProductModel} from "../../model/ProductModel.ts";
 import type {FC} from "react";
 
 type PropProd = {
-    product:ProductModelI
+    product:IProductModel
 }
 export const Product:FC<PropProd> = ({product:{title,description,category,price,images,meta:{qrCode}}}) => {
     return (
