@@ -1,11 +1,11 @@
 import "./posts.css"
-import type {PostsModuleI} from "../../modules/PostsModule.tsx";
+import type {IPostsModule} from "../../modules/PostsModule.tsx";
 import {useEffect, useState} from "react";
 import {loadPosts} from "../../service/api.service.ts";
 import {Post} from "../post/Post.tsx";
 
 export const Posts = () => {
-    const [posts, setPosts] = useState<PostsModuleI[]>([]);
+    const [posts, setPosts] = useState<IPostsModule[]>([]);
     useEffect(() => {
         loadPosts().then(data => setPosts(data));
     }, [])

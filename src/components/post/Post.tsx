@@ -1,8 +1,8 @@
 import type {FC} from "react";
-import type {PostsModuleI} from "../../modules/PostsModule.tsx";
+import type {IPostsModule} from "../../modules/PostsModule.tsx";
 
 type PostProps = {
-    post: PostsModuleI
+    post: IPostsModule
 }
 export const Post: FC<PostProps> = ({post: {id, title, body}}) => {
     return (

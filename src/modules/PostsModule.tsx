@@ -1,4 +1,4 @@
-export interface PostsModuleI {
+export interface IPostsModule {
   userId: number;
   id: number;
   title: string;
