@@ -1,4 +1,4 @@
-export interface TodoModI {
+export interface ITodoMod {
     userId: number;
     id: number;
     title: string;

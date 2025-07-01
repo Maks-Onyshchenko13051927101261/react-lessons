@@ -1,11 +1,11 @@
 import "./Todos.css"
-import type {TodoModI} from "../../modules/TodoModI.ts";
+import type {ITodoMod} from "../../modules/TodoModI.ts";
 import {useEffect, useState} from "react";
 import {loadTodos} from "../../service/api.service.ts";
 import {Todo} from "../todo-component/Todo.tsx";
 
 export const Todos = () => {
-    const [todos, setTodos] = useState<TodoModI[]>([]);
+    const [todos, setTodos] = useState<ITodoMod[]>([]);
     useEffect(() => {
         loadTodos().then(value => setTodos(value));
     }, [])
