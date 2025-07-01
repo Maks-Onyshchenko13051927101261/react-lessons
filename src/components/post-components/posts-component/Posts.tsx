@@ -2,10 +2,10 @@ import "./posts-style.css"
 import {useEffect, useState} from "react";
 import {loadPosts} from "../../../service/api.service.ts";
 import {Post} from "../post-component/Post.tsx";
-import type {PostModelI} from "../../../models/PostModel.ts";
+import type {IPostModel} from "../../../models/PostModel.ts";
 
 export const Posts = () => {
-    const [posts, setPosts] = useState<PostModelI[]>([]);
+    const [posts, setPosts] = useState<IPostModel[]>([]);
     useEffect(() => {
         async function fetchPosts(){
             const allPosts = await loadPosts();

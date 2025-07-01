@@ -1,23 +1,23 @@
-import type {CommentModelI} from "./CommentModel.ts";
-import type {PostModelI} from "./PostModel.ts";
-import type {TodoModelI} from "./TodoModel.ts";
+import type {ICommentModel} from "./CommentModel.ts";
+import type {IPostModel} from "./PostModel.ts";
+import type {ITodoModel} from "./TodoModel.ts";
 
-export interface ResponseDummyjsonCommentsI {
-  comments: CommentModelI[];
+export interface IResponseDummyjsonComments {
+  comments: ICommentModel[];
   total: number;
   skip: number;
   limit: number;
 }
 
-export interface ResponseDummyjsonPostsI {
-    posts: PostModelI[];
+export interface IResponseDummyjsonPosts {
+    posts: IPostModel[];
     total: number;
     skip: number;
     limit: number;
 }
 
-export interface ResponseDummyjsonTodosI {
-    todos: TodoModelI[];
+export interface IResponseDummyjsonTodos {
+    todos: ITodoModel[];
     total: number;
     skip: number;
     limit: number;

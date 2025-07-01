@@ -3,7 +3,7 @@ type ReactionsType = {
   dislikes: number;
 }
 
-export interface PostModelI {
+export interface IPostModel {
   id: number;
   title: string;
   body: string;

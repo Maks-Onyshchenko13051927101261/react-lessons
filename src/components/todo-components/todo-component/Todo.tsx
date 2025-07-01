@@ -1,9 +1,9 @@
 import "./todo-style.css"
-import type {TodoModelI} from "../../../models/TodoModel.ts";
+import type {ITodoModel} from "../../../models/TodoModel.ts";
 import type {FC} from "react";
 
 type PropTodo = {
-    todo: TodoModelI
+    todo: ITodoModel
 }
 export const Todo:FC<PropTodo> = ({todo:{id, todo}}) => {
     return (

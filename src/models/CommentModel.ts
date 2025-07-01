@@ -4,7 +4,7 @@ type UserType = {
   fullName: string;
 }
 
-export interface CommentModelI {
+export interface ICommentModel {
   id: number;
   body: string;
   postId: number;

@@ -1,9 +1,9 @@
 import "./comment-style.css"
-import type {CommentModelI} from "../../../models/CommentModel.ts";
+import type {ICommentModel} from "../../../models/CommentModel.ts";
 import type {FC} from "react";
 
 type PropComment = {
-    comment: CommentModelI
+    comment: ICommentModel
 }
 export const Comment: FC<PropComment> = ({comment: {body, postId, likes, user: {id, username, fullName}}}) => {
     return (
