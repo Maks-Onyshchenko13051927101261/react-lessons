@@ -1,8 +1,8 @@
-import type {CommentModuleI} from "../modules/CommentModule.tsx";
+import type {ICommentModule} from "../modules/CommentModule.tsx";
 
 
 const endpoint = import.meta.env.VITE_API_BASE_URL;
-const loadComments = async ():Promise<CommentModuleI[]> => {
+const loadComments = async ():Promise<ICommentModule[]> => {
     return await fetch(endpoint + "/comments").then(res => res.json());
 }
 

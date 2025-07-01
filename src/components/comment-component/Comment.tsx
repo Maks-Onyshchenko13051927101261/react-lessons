@@ -1,9 +1,9 @@
 import "./comment.css"
-import type {CommentModuleI} from "../../modules/CommentModule.tsx";
+import type {ICommentModule} from "../../modules/CommentModule.tsx";
 import type {FC} from "react";
 
 type PropComment={
-    comment: CommentModuleI
+    comment: ICommentModule
 }
 export const Comment:FC<PropComment> = ({comment:{id,name,email,body}}) => {
     return (
