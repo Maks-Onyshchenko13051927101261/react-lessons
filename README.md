@@ -104,3 +104,43 @@ branch lesson-2
     branch hw5-hQj9gOH
     Те саме що і попередні завдання, але данні отримати з апі – https://dummyjson.com/products
 
+branch lesson-3
+
+  branch #chszHaH9
+    Побудувати меню з можливістю переходу на наступні сторінки:
+    /users
+    /posts
+    /comments
+    /products
+    Контент на сторінках відсутній. Лише грамотна обробка роутів в двох варіантах (router object  та browser router (необов’язково, але рекомендовано))
+
+  branch #qL0b5uh
+    Побудувати меню, з можливістю переходу на наступні маршрути:
+    /users/jsonplaceholder
+    /users/dummyjson
+    /posts/jsonplaceholder
+    /posts/dummyjson
+    /comments/jsonplaceholder
+    Контент на сторінках відсутній. Лише грамотна обробка роутів
+
+  branch #Uyj2GjyDDF
+    Побудувати меню, з можливістю переходу на наступні маршрути:
+    /users/jsonplaceholder – відобразити всі об’єкти з  https://jsonplaceholder.typicode.com/users
+    /users/dummyjson – відобразити всі об’єкти з https://dummyjson.com/users
+    /posts/jsonplaceholder- відобразити всі об’єкти з  https://jsonplaceholder.typicode.com/posts
+    /posts/dummyjson – відобразити всі об’єкти з https://dummyjson.com/posts
+    /comments/jsonplaceholder – відобразити всі об’єкти з https://jsonplaceholder.typicode.com/comments
+    /comments/dummyjson – відобразити всі об’єкти з https://dummyjson.com/comments
+
+  branch #tntlwuxFxI5
+    Маршрутизація.
+    Є наступні сторінки: UsersPage – відтворює користувачів з api dummyjson.com (довільна розмітка та кількість інфи про об’єкт) PostsPage – відтворює пости з  api dummyjson.com (довільна розмітка та кількість інфи про об’єкт)
+    Відтворювати тільки перший відданий пул об’єктів (30 об’єктів чи скільки віддає апі) (без пагінації і не звертаючи увагу на залишки)
+
+  branch #z5PFSTAK
+    На головній сторінці вивести всіх користувачів з будь-якого апі.
+    При кліку на певного користувача вивести його корзини товарів, не заміняючи батьківський компонент (поруч з зі списком користувачів)
+
+  branch #knZgVIwvqd
+    На головній сторінці вивести всіх користувачів з будь-якого апі.
+    При кліку на певного користувача вивести його корзини товарів, заміняючи(!!!!!) батьківський компонент списком з корзинами.
