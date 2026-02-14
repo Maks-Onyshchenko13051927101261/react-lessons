@@ -1,0 +1,11 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+h3{
+    font-size: xx-large;
+}
+p{
+    font-size: 18px;
+}
