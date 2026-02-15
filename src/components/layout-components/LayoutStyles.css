@@ -1,0 +1,7 @@
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-style: oblique;
+    font-size: larger;
+}
