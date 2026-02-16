@@ -11,5 +11,5 @@ export const allUsers = {
     placeholder: async (): Promise<IUserModel[]> => await fetch(urls.users.usersPlaceholder)
         .then(res => res.json()),
     dummy: async (): Promise<IUserDummy[]> => await fetch(urls.users.usersDummy)
-        .then((res) => res.json())
+        .then((res) => res.json()).then(data => data.users),
 }
