@@ -1,11 +1,11 @@
 import {Outlet} from "react-router-dom";
-import {NavigateComponent} from "../../components/navigate-component/NavigateComponent.tsx";
+import {ApiNavigateComponent} from "../../components/navigate-component/NavigateComponent.tsx";
 
 export const UsersPage = () => {
     return (
         <div>
-            <p>Users:</p>
-            <NavigateComponent/>
+            <h5>Users:</h5>
+            <ApiNavigateComponent/>
             <hr/>
             <Outlet/>
         </div>

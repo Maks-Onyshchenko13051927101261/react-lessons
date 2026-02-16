@@ -9,12 +9,24 @@ import {DummyPage} from "../pages/dummy-page/DummyPage.tsx";
 export const routes = createBrowserRouter([
     {
         path: "/", element: <LayoutPage/>, children: [
-            {path: "users", element: <UsersPage/>, children:[
-                    {path:"jsonplaceholder", element:<PlaceholderPage/>},
-                    {path:"dummyjson", element:<DummyPage/>}
-                ]},
-            {path: "posts", element: <PostsPage/>},
-            {path: "comments", element: <CommentsPage/>}
+            {
+                path: "users", element: <UsersPage/>, children: [
+                    {path: "jsonplaceholder", element: <PlaceholderPage/>},
+                    {path: "dummyjson", element: <DummyPage/>}
+                ]
+            },
+            {
+                path: "posts", element: <PostsPage/>, children: [
+                    {path: "jsonplaceholder", element: <PlaceholderPage/>},
+                    {path: "dummyjson", element: <DummyPage/>}
+                ]
+            },
+            {
+                path: "comments", element: <CommentsPage/>, children: [
+                    {path: "jsonplaceholder", element: <PlaceholderPage/>},
+                    {path: "dummyjson", element: <DummyPage/>}
+                ]
+            }
         ]
     }
 ]);

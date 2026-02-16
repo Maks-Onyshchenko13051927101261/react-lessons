@@ -6,16 +6,15 @@ import type {IUserDummy} from "../../models/models-dummy/UsersDummy.tsx";
 import {useLocation} from "react-router-dom";
 
 export const UsersComponent = () => {
-    const location = useLocation();
-
+    const apiLocation = useLocation();
     const [users, setUsers] = useState<IUserModel[] | IUserDummy[]>([]);
     useEffect(() => {
-        if (location.pathname.includes("jsonplaceholder")) {
+        if (apiLocation.pathname.includes("jsonplaceholder")) {
             allUsers.placeholder().then(users => setUsers(users));
         } else {
             allUsers.dummy().then(users => setUsers(users))
         }
-    }, [location.pathname]);
+    }, [apiLocation.pathname]);
     return (
         <>{
             users.map((user) => <UserComponent key={user.id} item={user}/>)

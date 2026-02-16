@@ -1,9 +1,10 @@
-import {UsersComponent} from "../../components/user-components/UsersComponent.tsx";
+import {PlaceholderComponent} from "../../components/placeholder-components/PlaceholderComponent.tsx";
 
 export const PlaceholderPage = () => {
+
     return (
         <div>
-            <UsersComponent/>
+            <PlaceholderComponent/>
         </div>
     );
 };

@@ -1,7 +1,18 @@
+div {
+    margin: 20px
+}
 ul{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
     font-style: oblique;
     font-size: larger;
+}
+h5{
+    font-size: larger;
+    text-align: center;
+}
+p{
+    font-size: 20px;
+    margin-left: 10px;
 }
