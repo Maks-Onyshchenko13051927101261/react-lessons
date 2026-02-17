@@ -1,0 +1,17 @@
+div {
+    padding: 10px;
+    margin: 5px;
+    background-color: mediumaquamarine;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: teal;
+}
+
+li {
+    padding: 5px;
+    margin: 10px;
+    background-color: lightgray;
+}
