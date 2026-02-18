@@ -1,0 +1,14 @@
+div{
+    border: 1px solid teal;
+    padding: 10px;
+}
+h5{
+    font-size: 26px;
+    font-weight: bold;
+}
+button{
+    border: 5px solid teal;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+}
