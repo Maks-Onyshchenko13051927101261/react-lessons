@@ -7,7 +7,7 @@ export const UsersComponent = () => {
     const [users, setUsers] = useState<IUserModel[]>([]);
     useEffect(() => {
         usersServices.allUsers().then(({users}) => setUsers(users));
-    })
+    },[])
     return (
         <div>
             {users.map(user => <UserComponent item={user} key={user.id}/>)}
