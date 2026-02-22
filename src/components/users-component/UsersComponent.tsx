@@ -5,18 +5,13 @@ import {UserComponent} from "../user-component/UserComponent.tsx";
 import {useSearchParams} from "react-router-dom";
 
 export const UsersComponent = () => {
-    const [searchParams, setSearchParams] = useSearchParams({page: "1"})
+    const [searchParams] = useSearchParams({page: "1"})
     const [users, setUsers] = useState<IUserModel[]>([]);
     const currentPage = searchParams.get("page") || "1";
     useEffect(() => {
-        usersServices.getAllUsers(currentPage).then(data => {
-            if (data.users && data.users.length > 0) {
-                setUsers(data.users)
-            } else if (+currentPage !== 1) {
-                setSearchParams({page: "1"})
-            }
-        })
-    }, [currentPage,setSearchParams])
+        usersServices.getAllUsers(currentPage)
+            .then(({users}) => setUsers(users))
+    }, [currentPage])
     return (
         <ul>{
             users.map(user => (<UserComponent user={user} key={user.id}/>))

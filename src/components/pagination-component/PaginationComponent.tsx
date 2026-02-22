@@ -14,7 +14,9 @@ export const PaginationComponent = () => {
             }>prev
             </button>
             <button onClick={() => {
-                setSearchParams({page: (++currentPage).toString()})
+                if (currentPage < 7) {
+                    setSearchParams({page: (++currentPage).toString()})
+                }
             }
             }>next
             </button>
