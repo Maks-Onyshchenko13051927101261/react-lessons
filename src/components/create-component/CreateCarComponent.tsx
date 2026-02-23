@@ -16,16 +16,25 @@ export const CreateCarComponent = () => {
     return (
         <form onSubmit={handleSubmit(handlerCreateCar)}>
             <div>
-                <input type="text" {...register("brand")}/>
-                <div>{errors.brand?.message}</div>
+                <label>
+                    brand:
+                    <input type="text" {...register("brand")}/>
+                    <div>{errors.brand?.message}</div>
+                </label>
             </div>
             <div>
-                <input type="number" {...register("year")}/>
-                <div>{errors.year?.message}</div>
+                <label>
+                    years:
+                    <input type="number" {...register("year")}/>
+                    <div>{errors.year?.message}</div>
+                </label>
             </div>
             <div>
-                <input type="number" {...register("price")}/>
-                <div>{errors.price?.message}</div>
+                <label>
+                    price:
+                    <input type="number" {...register("price")}/>
+                    <div>{errors.price?.message}</div>
+                </label>
             </div>
             <button type="submit">Create</button>
         </form>

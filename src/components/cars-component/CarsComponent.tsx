@@ -12,7 +12,7 @@ export const CarsComponent = () => {
         });
     }, [])
     return (
-        <div className="cars">{
+        <div className="carsVisual">{
             cars.map((car) => (<CarComponent car={car} key={car.id}/>
             ))
         }</div>
