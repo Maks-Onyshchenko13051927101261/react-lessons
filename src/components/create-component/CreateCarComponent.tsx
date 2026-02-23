@@ -2,6 +2,7 @@ import {useForm} from "react-hook-form";
 import type {ICarModel} from "../../models/CarModel.tsx";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {addCarValidator} from "../../validator/addCarValidator.tsx";
+import {carServices} from "../../services/api.services.tsx";
 
 export const CreateCarComponent = () => {
     const {register, handleSubmit, formState: {errors}} = useForm<ICarModel>({
@@ -9,8 +10,7 @@ export const CreateCarComponent = () => {
         resolver: joiResolver(addCarValidator)
     });
     const handlerCreateCar = (data: ICarModel) => {
-        // addCar(data);
-        console.log(data);
+        carServices.addCar(data);
     };
     return (
         <form onSubmit={handleSubmit(handlerCreateCar)}>

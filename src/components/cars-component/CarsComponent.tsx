@@ -1,18 +1,19 @@
+import "./carsStyles.css"
 import {useEffect, useState} from "react";
 import type {ICarModel} from "../../models/CarModel.tsx";
-import {getAllCars} from "../../services/api.services.tsx";
+import {carServices} from "../../services/api.services.tsx";
 import {CarComponent} from "../car-component/CarComponent.tsx";
 
 export const CarsComponent = () => {
     const [cars, setCars] = useState<ICarModel[]>([]);
     useEffect(() => {
-        getAllCars().then(cars => {
+        carServices.getAllCars().then(cars => {
             setCars(cars)
             console.log(cars)
         });
     },[])
     return (
-        <div>{
+        <div className="cars">{
             cars.map((car) => (<CarComponent car={car} key={car.id}/>
             ))
         }</div>
