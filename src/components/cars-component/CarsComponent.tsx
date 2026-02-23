@@ -9,9 +9,8 @@ export const CarsComponent = () => {
     useEffect(() => {
         carServices.getAllCars().then(cars => {
             setCars(cars)
-            console.log(cars)
         });
-    },[])
+    }, [])
     return (
         <div className="cars">{
             cars.map((car) => (<CarComponent car={car} key={car.id}/>

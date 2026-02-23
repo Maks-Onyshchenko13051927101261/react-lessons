@@ -1,3 +1,4 @@
+import "./createCar.css"
 import {useForm} from "react-hook-form";
 import type {ICarModel} from "../../models/CarModel.tsx";
 import {joiResolver} from "@hookform/resolvers/joi";
