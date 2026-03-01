@@ -3,6 +3,7 @@ import {MainLayout} from "../layout/MainLayout.tsx";
 import {HomePage} from "../pages/HomePage.tsx";
 import {LoginPage} from "../pages/LoginPage.tsx";
 import {UserSelectionPage} from "../pages/UserSelectionPage.tsx";
+import {ProductsPage} from "../pages/ProductsPage.tsx";
 
 export const Routes = createBrowserRouter([
     {path: "/", element: <MainLayout/>, children:[
@@ -10,6 +11,6 @@ export const Routes = createBrowserRouter([
             {path:"login", element:<LoginPage/>, children:[
                     {path:"resources", element:<UserSelectionPage/>}
                 ]},
-
+            {path:"auth/products", element:<ProductsPage/>},
         ]}
 ])

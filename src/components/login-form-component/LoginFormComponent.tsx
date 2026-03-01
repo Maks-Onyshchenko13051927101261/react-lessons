@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import type {IUserModel} from "../../models/IUserModel.tsx";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {userValidator} from "../../validator/userValidator.tsx";
-import {loginResponse} from "../../services/api.services.tsx";
+import {login} from "../../services/api.services.tsx";
 import {useNavigate} from "react-router";
 
 export const LoginFormComponent = () => {
@@ -18,7 +18,7 @@ export const LoginFormComponent = () => {
 
     const handlerValid = async (data: IUserModel) => {
         try {
-            await loginResponse({...data, expiresInMins: 1});
+            await login.response({...data, expiresInMins: 1});
             if (localStorage.getItem("user")) {
                 navigate("resources");
             }
