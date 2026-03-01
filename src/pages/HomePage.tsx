@@ -1,7 +1,8 @@
 export const HomePage = () => {
     return (
-        <>
-            Home
-        </>
+        <div>
+            <p>Welcome to home</p>
+            <h2>OKTEN is cool</h2>
+        </div>
     );
 };

@@ -1,12 +1,12 @@
 import {LoginFormComponent} from "../components/login-form-component/LoginFormComponent.tsx";
-import {LoginAuthComponent} from "../components/login-auth-component/LoginAuthComponent.tsx";
+import {Outlet} from "react-router";
 
 export const LoginPage = () => {
     return (
         <>
             <LoginFormComponent/>
             <hr/>
-            <LoginAuthComponent/>
+            <Outlet/>
         </>
     );
 };
