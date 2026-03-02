@@ -1,24 +1,3 @@
-export interface Dimensions {
-  width: number;
-  height: number;
-  depth: number;
-}
-
-export interface Reviews {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
-}
-
-export interface Meta {
-  createdAt: string;
-  updatedAt: string;
-  barcode: string;
-  qrCode: string;
-}
-
 export interface IProductModel {
   id: number;
   title: string;
@@ -42,4 +21,25 @@ export interface IProductModel {
   meta: Meta;
   images: string[];
   thumbnail: string;
+}
+
+export interface Dimensions {
+  width: number;
+  height: number;
+  depth: number;
+}
+
+export interface Reviews {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
+}
+
+export interface Meta {
+  createdAt: string;
+  updatedAt: string;
+  barcode: string;
+  qrCode: string;
 }

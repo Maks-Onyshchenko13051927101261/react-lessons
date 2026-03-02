@@ -1,10 +1,9 @@
-import type {IUserWithTokens} from "../models/IUserWithTokens.tsx";
-import type {IBaseResponse} from "../models/IBaseResponse.tsx";
-import type {IProductModel} from "../models/IProductModel.tsx";
-import type {ITokenPair} from "../models/ITokenPair.tsx";
-import {retrieveLocalStorage} from "./helpers.tsx";
-import type {ICartModel} from "../models/ICartModel.tsx";
 import axiosInstance from "./api.config.tsx";
+import {createGetResources, retrieveLocalStorage} from "./helpers.tsx";
+import type {IUserWithTokens} from "../models/IUserWithTokens.tsx";
+import type {ITokenPair} from "../models/ITokenPair.tsx";
+import type {IRecipeModel} from "../models/IRecipeModel.tsx";
+import type {IProductModel} from "../models/IProductModel.tsx";
 
 type dataType = {
     username: string;
@@ -34,12 +33,6 @@ export const login = {
 }
 
 export const getResources = {
-    products: async (): Promise<IProductModel[]> => {
-        const {data: {products}} = await axiosInstance.get<IBaseResponse>("/products");
-        return products || [];
-    },
-    cart: async (): Promise<ICartModel[]> => {
-        const {data: {carts}} = await axiosInstance.get<IBaseResponse>("/cart");
-        return carts || [];
-    }
+    products: createGetResources<IProductModel>("/products", "products"),
+    recipes: createGetResources<IRecipeModel>("/recipes", "recipes"),
 }

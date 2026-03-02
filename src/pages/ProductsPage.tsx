@@ -1,11 +1,9 @@
-import {useEffect} from "react";
-import {getResources} from "../services/api.services.tsx";
+import {ProductsComponent} from "../components/products-components/products-component/ProductsComponent.tsx";
 
 export const ProductsPage = () => {
-    useEffect(() => {
-        getResources.products().then(data => console.log(data));
-    }, []);
     return (
-        <>products</>
+        <>
+            <ProductsComponent/>
+        </>
     );
 };

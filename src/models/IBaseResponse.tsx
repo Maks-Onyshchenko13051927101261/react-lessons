@@ -1,6 +1,6 @@
 import type {IProductModel} from "./IProductModel.tsx";
 import type {IUserModel} from "./IUserModel.tsx";
-import type {ICartModel} from "./ICartModel.tsx";
+import type {IRecipeModel} from "./IRecipeModel.tsx";
 
 export interface IBaseResponse {
     total: number;
@@ -8,5 +8,5 @@ export interface IBaseResponse {
     limit: number;
     users?: IUserModel[];
     products?: IProductModel[];
-    carts?: ICartModel[];
+    recipes?: IRecipeModel[];
 }
