@@ -9,14 +9,14 @@ const axiosInstance = axios.create({
     baseURL: authEndpoint,
     headers: {}
 })
-
+// функція що відслідковує всі GET запити на сервер та додає хедери для доступу та повертає авторизовану інформацію
 axiosInstance.interceptors.request.use((requestObject) => {
     if (requestObject.method?.toUpperCase() === "GET") {
         requestObject.headers.Authorization = "Bearer " + retrieveLocalStorage<IUserWithTokens>("user").accessToken
     }
     return requestObject;
 })
-
+// перевірка помилок, які отримаємо в наслідок роботи з сервером та робимо refresh токена, якщо виникає помилка аутифікації 401
 axiosInstance.interceptors.response.use(
     response => response,
     async error => {

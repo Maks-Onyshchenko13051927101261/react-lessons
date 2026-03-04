@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-
-export const useLoader = <T, >(request: () => Promise<T[]>) => {
+// функція в яку ми передаємо дані для перевірки їх та поверненню масиву даних
+export const useFetch = <T, >(request: () => Promise<T[]>) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
     const [data, setData] = useState<T[]>([]);

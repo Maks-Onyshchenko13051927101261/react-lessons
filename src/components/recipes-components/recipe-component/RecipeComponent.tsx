@@ -6,7 +6,7 @@ type RecipePropsType = {
 }
 export const RecipeComponent: FC<RecipePropsType> = ({recipe: {id, name}}) => {
     return (
-        <div>
+        <div className={"item"}>
             <h5>{id} {name}</h5>
         </div>
     );

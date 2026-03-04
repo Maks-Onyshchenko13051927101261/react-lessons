@@ -6,9 +6,9 @@ type ProductPropsType = {
 }
 export const ProductComponent: FC<ProductPropsType> = ({product: {id, title, category, price, images: [firstEl]}}) => {
     return (
-        <div>
-            <h5>{id} {title}</h5>
-            <img alt={title} src={firstEl}/>
+        <div className={"item"}>
+            <h5>{id}. {title}</h5>
+            <img alt={title} src={firstEl} style={{width:"200px", height:"200px", display:"block"}}/>
             <p>{category} {price}</p>
         </div>
     );

@@ -1,13 +1,13 @@
 import {RecipeComponent} from "../recipe-component/RecipeComponent.tsx";
-import {useLoader} from "../../../services/hookLoader.tsx";
 import {getResources} from "../../../services/api.services.tsx";
+import {useFetch} from "../../../services/fetchHook.tsx";
 
 export const RecipesComponent = () => {
-    const {loading, error, data: recipes} = useLoader(getResources.recipes);
+    const {loading, error, data: recipes} = useFetch(getResources.recipes);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Try to login again...</p>;
     return (
-        <div>{
+        <div className={"container"}>{
             recipes.map(recipe => (<RecipeComponent recipe={recipe} key={recipe.id}/>))
         }</div>
     );
