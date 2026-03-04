@@ -1,29 +1,11 @@
-import {useEffect, useState} from "react";
-import {getResources, login} from "../../../services/api.services.tsx";
 import {RecipeComponent} from "../recipe-component/RecipeComponent.tsx";
-import type {IRecipeModel} from "../../../models/IRecipeModel.tsx";
+import {useLoader} from "../../../services/hookLoader.tsx";
+import {getResources} from "../../../services/api.services.tsx";
 
 export const RecipesComponent = () => {
-    const [recipes, setRecipes] = useState<IRecipeModel[]>([]);
-    useEffect(() => {
-        const fetchRecipes = async () => {
-            try {
-                setRecipes(await getResources.recipes());
-            }
-            catch (e) {
-                const error = e as {response?: {status: number}};
-                if(error.response?.status === 401){
-                    try{
-                        await login.refresh();
-                        setRecipes(await getResources.recipes());
-                    } catch (refreshError) {
-                        console.log(refreshError);
-                    }
-                } else {console.error("something went wrong (not 401):", e)}
-            }
-        }
-        void fetchRecipes();
-    }, [])
+    const {loading, error, data: recipes} = useLoader(getResources.recipes);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Try to login again...</p>;
     return (
         <div>{
             recipes.map(recipe => (<RecipeComponent recipe={recipe} key={recipe.id}/>))

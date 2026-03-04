@@ -1,6 +1,7 @@
 import type {IUserWithTokens} from "../models/IUserWithTokens.tsx";
 import {retrieveLocalStorage} from "./helpers.tsx";
 import axios from "axios";
+import {login} from "./api.services.tsx";
 
 const authEndpoint = import.meta.env.VITE_API_BASE_URL + "/auth";
 
@@ -15,5 +16,21 @@ axiosInstance.interceptors.request.use((requestObject) => {
     }
     return requestObject;
 })
+
+axiosInstance.interceptors.response.use(
+    response => response,
+    async error => {
+        if (error.response?.status === 401 && !error.config._retry) {
+            error.config._retry = true;
+            try {
+                await login.refresh();
+                return axiosInstance(error.config);
+            } catch (error) {
+                return Promise.reject(error);
+            }
+        }
+        return Promise.reject(error);
+    }
+)
 
 export default axiosInstance;

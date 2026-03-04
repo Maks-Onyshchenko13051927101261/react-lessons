@@ -4,7 +4,7 @@ import type {IBaseResponse} from "../models/IBaseResponse.tsx";
 export const retrieveLocalStorage = <T, >(key: string) => {
     const object = localStorage.getItem(key) || "";
     if (!object) {
-        return {} as T;
+        return null;
     }
     const parse = JSON.parse(object);
     return parse as T;
@@ -13,5 +13,4 @@ export const retrieveLocalStorage = <T, >(key: string) => {
 export const createGetResources = <T, >(url: string, key: keyof IBaseResponse) => async ():Promise<T[]> => {
     const {data} = await axiosInstance.get<IBaseResponse>(url);
     return data[key] as T[];
-
 }
