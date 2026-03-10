@@ -6,6 +6,7 @@ export const MenuComponent = () => {
             <Link to={"users"}>Users</Link>
             <Link to={"posts"}>Posts</Link>
             <Link to={"comments"}>Comments</Link>
+            <Link to={"complex"}>Complex</Link>
         </nav>
     );
 };

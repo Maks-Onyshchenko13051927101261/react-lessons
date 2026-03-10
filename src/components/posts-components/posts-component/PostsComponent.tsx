@@ -1,11 +1,17 @@
-import {useFetch} from "../../../hooks/useFetch.tsx";
-import {endpoint} from "../../../services/api.services.tsx";
 import {PostComponent} from "../post-component/PostComponent.tsx";
+import {useAppSelector} from "../../../redux/hooks/useAppSelector.tsx";
+import {useEffect} from "react";
+import {postActions} from "../../../redux/slices/postSlice/postSlice.tsx";
+import {useAppDispatch} from "../../../redux/hooks/useAppDispatch.tsx";
 
 export const PostsComponent = () => {
-    const {item: posts, error, loading} = useFetch(endpoint.posts);
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>...Error</div>;
+    const dispatch = useAppDispatch();
+    const {posts, isLoading, error} = useAppSelector(state => state.postStoreSlice);
+    useEffect(() => {
+        dispatch(postActions.loadPosts());
+    }, [dispatch]);
+    if (isLoading) return <p>Завантаження...</p>;
+    if (error) return <p>Ой! Сталася помилка: {error}</p>;
     return (
         <div>{
             posts.map((post) => (<PostComponent post={post} key={post.id}/>))
